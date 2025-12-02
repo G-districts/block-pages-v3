@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blocked details • G Schools</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #f5fbff;
+      background-image: url("background.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #111827;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .top-bar {
+      height: 56px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+    .top-bar-left {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #e5f0ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+    .page {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 32px 16px 40px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 40px 32px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.10);
+      text-align: left;
+    }
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .card-header img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+    .card-header-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+    }
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th {
+      width: 170px;
+      color: #6b7280;
+      font-weight: 600;
+      background-color: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    td {
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .info-text {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin: 10px 0 18px;
+      text-align: center;
+    }
+    .info-text a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .info-text a:hover {
+      text-decoration: underline;
+    }
+    .bypass-box {
+      margin-top: 6px;
+      padding: 16px 18px 20px;
+      border-radius: 14px;
+      background: #f1f5f9;
+    }
+    .bypass-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .bypass-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .bypass-row input {
+      flex: 1;
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 0.92rem;
+    }
+    .bypass-row button {
+      min-width: 92px;
+      border-radius: 999px;
+      border: none;
+      padding: 9px 14px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: #2563eb;
+      color: #ffffff;
+    }
+    .bypass-row button:hover {
+      background: #1d4ed8;
+    }
+    .bypass-message {
+      margin-top: 6px;
+      font-size: 0.82rem;
+    }
+    .bypass-message.error {
+      color: #b91c1c;
+    }
+    .bypass-message.success {
+      color: #166534;
+    }
+    .footer {
+      text-align: center;
+      padding: 10px 0 18px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-bar-left">Gdistrict • G Schools Filter</div>
+    <div class="top-bar-right">
+      <span id="user-id"></span>
+      <div class="avatar" aria-hidden="true">GS</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="card">
+      <div class="card-header">
+        <img src="logo1.png" alt="district icon">
+        <div class="card-header-title">Blocked details</div>
+      </div>
+
+      <table>
+        <tr>
+          <th>Website</th>
+          <td id="detail-website">UNKNOWN</td>
+        </tr>
+        <tr>
+          <th>Path</th>
+          <td id="detail-path"></td>
+        </tr>
+        <tr>
+          <th>Policy Name</th>
+          <td id="detail-policy"></td>
+        </tr>
+        <tr>
+          <th>Rule Type</th>
+          <td id="detail-rule-type">Standard Filtering</td>
+        </tr>
+        <tr>
+          <th>Application/Category</th>
+          <td id="detail-category"></td>
+        </tr>
+        <tr>
+          <th>Your IP</th>
+          <td id="detail-ip"></td>
+        </tr>
+      </table>
+
+      <p class="info-text">
+        If you believe this site has been incorrectly blocked, please contact your G Schools administrator.
+      </p>
+
+      <div id="bypass-box" class="bypass-box" style="display:none;">
+        <div class="bypass-title">Enter your bypass code to unblock this link</div>
+        <div class="bypass-row">
+          <input id="bypass-code" type="password" placeholder="Bypass code">
+          <button id="bypass-submit" type="button">Unblock</button>
+        </div>
+        <div id="bypass-message" class="bypass-message"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> G Schools
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    function safeDecodeBase64(value) {
+      if (!value) return "";
+      try {
+        return atob(value);
+      } catch (e) {
+        return value;
+      }
+    }
+
+    const url = params.get("url") || "UNKNOWN";
+    const user = params.get("user") || "";
+    const path = params.get("path") || "";
+    const policy = safeDecodeBase64(params.get("rule")) || params.get("policy") || "";
+    const ip = params.get("ip") || "";
+    const ruleType = params.get("ruletype") || "Standard Filtering";
+    const category = params.get("cat") || "";
+
+    document.getElementById("detail-website").textContent = url;
+    document.getElementById("detail-path").textContent = path;
+    document.getElementById("detail-policy").textContent = policy;
+    document.getElementById("detail-rule-type").textContent = ruleType;
+    document.getElementById("detail-category").textContent = category;
+    document.getElementById("detail-ip").textContent = ip || "Not available";
+    document.getElementById("user-id").textContent = user;
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const bypassEnabled = params.get("bypass") === "1";
+    const bypassBox = document.getElementById("bypass-box");
+    if (bypassEnabled) {
+      bypassBox.style.display = "block";
+    }
+
+    const bypassInput = document.getElementById("bypass-code");
+    const bypassButton = document.getElementById("bypass-submit");
+    const bypassMessage = document.getElementById("bypass-message");
+
+    bypassButton.addEventListener("click", () => {
+      const code = bypassInput.value.trim();
+      if (!code) {
+        bypassMessage.textContent = "Please enter a bypass code.";
+        bypassMessage.className = "bypass-message error";
+        return;
+      }
+
+      // Dispatch a custom event so the G Schools extension/backend can handle validation.
+      const detail = {
+        code,
+        url,
+        user,
+        path,
+        policy,
+        ip
+      };
+      window.postMessage({ type: "gschools-bypass-attempt", detail }, "*");
+
+      bypassMessage.textContent = "Bypass request sent. Waiting for confirmation…";
+      bypassMessage.className = "bypass-message success";
+    });
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ceddc5495642aa833a7a769dc18040","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maintenance Mode</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(180deg,#f9fbff 0%,#eef3ff 100%);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header {
+      width: 100%;
+      background: rgba(255,255,255,0.9);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      z-index: 100;
+    }
+    header img { height: 48px; }
+    main { flex:1; display:flex; align-items:center; justify-content:center; flex-direction:column; padding:20px; }
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(2,6,23,.12);
+      max-width: 700px;
+    }
+    h1 { font-family: Nunito, sans-serif; font-weight: 800; margin: 16px 0; font-size: 2rem; }
+    p { font-size: 1.1rem; color:#334155; }
+    svg { width: 200px; height: auto; margin-bottom:20px; }
+  </style>
+</head>
+<body>
+  <header><img src="favicon.png" alt="G Schools Logo"></header>
+  <main>
+    <div class="card">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#e2e8f0"/><path d="M60 20 L80 40 L70 50 L50 30 Z" fill="#2563eb"/><rect x="45" y="50" width="10" height="30" fill="#0f172a"/></svg>
+      <h1>Maintenance Mode</h1>
+      <p>G Schools is currently under maintenance. Please try again later.</p>
+    </div>
+  </main>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ceddc5495642aa833a7a769dc18040","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

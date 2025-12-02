@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blocked - G School</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    /* Reset and Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Animated background bubbles */
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: rise 20s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+
+    .bubble:nth-child(1) { left: 10%; width: 60px; height: 60px; animation-duration: 15s; }
+    .bubble:nth-child(2) { left: 30%; width: 100px; height: 100px; animation-duration: 25s; }
+    .bubble:nth-child(3) { left: 50%; width: 80px; height: 80px; animation-duration: 20s; }
+    .bubble:nth-child(4) { left: 70%; width: 50px; height: 50px; animation-duration: 18s; }
+    .bubble:nth-child(5) { left: 90%; width: 120px; height: 120px; animation-duration: 30s; }
+
+    /* Main Content */
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .sign {
+      display: inline-block;
+      padding: 15px 25px;
+      background: #e74c3c;
+      color: white;
+      font-weight: bold;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); background: #e74c3c; }
+      50% { transform: scale(1.1); background: #c0392b; }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Background bubbles -->
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <!-- Main Content -->
+  <img src="favicon.png" alt="G School Logo" class="logo">
+  <h1>This Page is Not Allowed by Your District</h1>
+  <p>G School has blocked this page to keep browsing safe and secure.</p>
+  <div class="sign">🚫 Zero Trust Browsing 🚫</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ceddc5495642aa833a7a769dc18040","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

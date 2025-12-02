@@ -1,0 +1,217 @@
+<!doc<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G Schools</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#0f172a;
+      --ink-2:#334155;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --primary:#2563eb;
+      --ring: rgba(37, 99, 235, .35);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(37,99,235,.12), transparent 60%),
+        radial-gradient(800px 600px at 110% 20%, rgba(16,185,129,.10), transparent 60%),
+        linear-gradient(180deg,#f9fbff 0%, #eef3ff 100%);
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+    }
+    header{
+      display:flex; align-items:center; gap:12px;
+      padding:14px 18px;
+      background: rgba(255,255,255,.85);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #e2e8f0;
+      position:sticky; top:0; z-index:10;
+    }
+    header img{height:40px}
+    header h1{
+      font-family: Nunito, Inter, system-ui;
+      font-weight:800; font-size:20px; margin:0;
+      letter-spacing:.2px;
+    }
+    main{flex:1; display:grid; place-items:center; padding:24px}
+    .wrap{width:min(1100px, 94vw)}
+    .intro{
+      text-align:center; margin: 12px auto 24px; color:var(--ink-2);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap:16px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:20px;
+      padding:18px;
+      box-shadow: 0 16px 40px rgba(2,6,23,.10), 0 6px 16px rgba(2,6,23,.06);
+      border:1px solid #e5e7eb;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 24px 60px rgba(2,6,23,.12), 0 10px 20px rgba(2,6,23,.06);
+      border-color:#dbeafe;
+    }
+    .icon{
+      width:44px; height:44px; border-radius:12px;
+      display:grid; place-items:center;
+      background:#eff6ff; color:#1d4ed8;
+      box-shadow: inset 0 0 0 1px #dbeafe;
+    }
+    .title{font-weight:700; font-family: Nunito, Inter; font-size:16px; line-height:1.2}
+    .desc{font-size:13px; color:var(--ink-2); min-height:34px}
+    .go{
+      margin-top:auto;
+      display:inline-block;
+      background:#1d4ed8; color:white; text-decoration:none;
+      padding:10px 12px; border-radius:12px; font-weight:700; font-size:14px;
+      text-align:center;
+      box-shadow: 0 6px 18px var(--ring);
+      border: 1px solid #1d4ed8;
+    }
+    .go:focus-visible{outline:3px solid var(--ring)}
+    .grid a.card{ color:inherit; text-decoration:none }
+    footer{padding:16px; text-align:center; color:#64748b; font-size:13px}
+    code{background:#f1f5f9; padding:.1rem .35rem; border-radius:6px; border:1px solid #e2e8f0}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="favicon.png" alt="G Schools">
+    <h1>G Schools</h1>
+  </header>
+
+  <main id="protected" style="display:none;">
+    <div class="wrap">
+      <p class="intro">Select a page to open:</p>
+      <div class="grid">
+
+        <a class="card" href="break_time.html">
+          <div class="icon">⏸️</div>
+          <div class="title">Break Time</div>
+          <div class="desc">Fun "take a break" interstitial.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="Browsing%20Disabled.html">
+          <div class="icon">🚫</div>
+          <div class="title">Browsing Disabled</div>
+          <div class="desc">Admin-disabled browsing screen.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="Contentblocked_flagged.html">
+          <div class="icon">⚠️</div>
+          <div class="title">Content Blocked (Flagged)</div>
+          <div class="desc">Flag notice for inappropriate content.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="G_schools_Teacher_block.html">
+          <div class="icon">🔒</div>
+          <div class="title">Teacher Lock</div>
+          <div class="desc">Teacher locked browsing controls.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="Gschool%20block%20deafult.html">
+          <div class="icon">🛑</div>
+          <div class="title">Content Blocked (Default)</div>
+          <div class="desc">General "content blocked" page.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="Gschool%20block.html">
+          <div class="icon">🧱</div>
+          <div class="title">Content Blocked</div>
+          <div class="desc">Org policy content block page.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="locked.html">
+          <div class="icon">🔐</div>
+          <div class="title">Locked</div>
+          <div class="desc">Locked/browsing blocked variant.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="maintenance.html">
+          <div class="icon">🛠️</div>
+          <div class="title">Maintenance Mode</div>
+          <div class="desc">System undergoing maintenance.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="nointer.html">
+          <div class="icon">📶</div>
+          <div class="title">Network Access Required</div>
+          <div class="desc">No internet / network required page.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="suspended.html">
+          <div class="icon">⛔</div>
+          <div class="title">Suspended</div>
+          <div class="desc">Account suspended notice.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="tab_closed.html">
+          <div class="icon">📑</div>
+          <div class="title">Tab Closed</div>
+          <div class="desc">Teacher closed your last tab.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="time_limit.html">
+          <div class="icon">⏰</div>
+          <div class="title">Time Limit</div>
+          <div class="desc">Screen time limit reached.</div>
+          <span class="go">Open</span>
+        </a>
+
+        <a class="card" href="Zerotrust.html">
+          <div class="icon">🛡️</div>
+          <div class="title">Zero Trust</div>
+          <div class="desc">Zero Trust browsing block page.</div>
+          <span class="go">Open</span>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2025 G Schools</footer>
+
+  <script>
+    // Password protection
+    const password = "220099";
+    const userInput = prompt("Enter password to access G Schools:");
+    if(userInput === password){
+      document.getElementById("protected").style.display = "block";
+    } else {
+      document.body.innerHTML = "<h2 style='text-align:center;margin-top:20%;font-family:Inter;'>Access Denied</h2>";
+    }
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ceddc5495642aa833a7a769dc18040","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
